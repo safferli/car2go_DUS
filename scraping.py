@@ -5,6 +5,7 @@ import pandas as pd
 #%%
 
 url = "https://www.car2go.com/api/v2.1/vehicles?loc=duesseldorf&oauth_consumer_key=car2gowebsite&format=json"
+# https://www.car2go.com/api/v2.1/operationareas?loc=duesseldorf&oauth_consumer_key=car2gowebsite&format=json
 
 r = requests.get(url)
 
