@@ -12,7 +12,10 @@ r = requests.get(url)
 #%%
 
 r.status_code
-r.headers
+hdr = r.headers
+
+print(hdr["Date"])
+
 #r.encoding
 #r.text
 
@@ -27,5 +30,8 @@ r.status_code == requests.codes.ok
 
 # car2go returns everything inside a placemarks [], so we normalise here
 data = pd.io.json.json_normalize(r.json(), 'placemarks')
+
+# add API call time to df
+data["API_call_datetime"] = pd.to_datetime(hdr["Date"])
 
 #%%
